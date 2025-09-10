@@ -5,6 +5,8 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Use repo path when deploying to GitHub Pages (set via --mode pages)
+  base: mode === "pages" ? "/builder-pulse-forge/" : "/",
   server: {
     host: "::",
     port: 8080,
